@@ -20,10 +20,8 @@ public class MainActivity extends AppCompatActivity {
             "com.example.android.studycase1.extra.MESSAGE2";
 
     public static final String EXTRA_MESSAGE3 =
-            "com.example.android.studycase1.extra.MESSAGE2";
+            "com.example.android.studycase1.extra.MESSAGE3";
 
-    public static final String EXTRA_MESSAGE4 =
-            "com.example.android.studycase1.extra.MESSAGE2";
 
     private EditText mMenuEditText;
     private EditText mPorsiEditText;
@@ -40,18 +38,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void returnSugestion(View view) {
-       // Button mbuttonText = (Button)view;
+        Button mbuttonText = (Button)view;
 
 
         Intent intent = new Intent (this,Main2Activity.class);
         String mMenu = mMenuEditText.getText().toString();
         String mPorsi =mPorsiEditText.getText().toString();
-       // String buttonText = mbuttonText.getText().toString();
+        String buttonText = mbuttonText.getText().toString();
 
 
         intent.putExtra(EXTRA_MESSAGE1, mMenu);
         intent.putExtra(EXTRA_MESSAGE2, mPorsi);
-       // intent.putExtra(EXTRA_MESSAGE3, buttonText);
+        intent.putExtra(EXTRA_MESSAGE3, buttonText);
 
         startActivity(intent);
 
