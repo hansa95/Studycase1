@@ -13,30 +13,54 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText tempatMakan;
-    EditText menu;
-    EditText Porsi;
-    Button eatBus;
-    Button Abnormal;
+    public static final String EXTRA_MESSAGE1 =
+            "com.example.android.studycase1.extra.MESSAGE1";
 
+    public static final String EXTRA_MESSAGE2 =
+            "com.example.android.studycase1.extra.MESSAGE2";
+
+    public static final String EXTRA_MESSAGE3 =
+            "com.example.android.studycase1.extra.MESSAGE2";
+
+    public static final String EXTRA_MESSAGE4 =
+            "com.example.android.studycase1.extra.MESSAGE2";
+
+    private EditText mMenuEditText;
+    private EditText mPorsiEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mMenuEditText = (EditText) findViewById(R.id.Menu);
+        mPorsiEditText = (EditText) findViewById(R.id.Porsi);
+
+
     }
-    tempatMakan = (EditText) findViewById(R.id.eatbusButton);
-
-
 
     public void returnSugestion(View view) {
+       // Button mbuttonText = (Button)view;
 
-        Intent intent = new Intent (this, Main2Activity.class);
+
+        Intent intent = new Intent (this,Main2Activity.class);
+        String mMenu = mMenuEditText.getText().toString();
+        String mPorsi =mPorsiEditText.getText().toString();
+       // String buttonText = mbuttonText.getText().toString();
 
 
-        String message = messegeTempat.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(EXTRA_MESSAGE1, mMenu);
+        intent.putExtra(EXTRA_MESSAGE2, mPorsi);
+       // intent.putExtra(EXTRA_MESSAGE3, buttonText);
 
-        startActivityForResult(intent, );
+        startActivity(intent);
+
+
+
+
+
+
+
     }
 }
+
